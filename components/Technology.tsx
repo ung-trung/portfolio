@@ -15,70 +15,70 @@ const Technology = () => {
 		{
 			name: 'HTML5',
 			url: 'https://html.spec.whatwg.org/',
-			Logo: Html5Logo
+			logo: Html5Logo
 		},
 		{
 			name: 'TypeScript',
 			url: 'https://www.typescriptlang.org/',
-			Logo: TypescriptLogo
+			logo: TypescriptLogo
 		},
 		{
 			name: 'React',
 			url: 'https://reactjs.org/',
-			Logo: ReactLogo
+			logo: ReactLogo
 		},
 		{
 			name: 'NextJS',
 			url: 'https://nextjs.org/',
-			Logo: NextjsLogo
-		},
-		{
-			name: 'NodeJS',
-			url: 'https://nodejs.org/en/',
-			Logo: NodejsLogo
+			logo: NextjsLogo
 		},
 		{
 			name: 'Git',
 			url: 'https://git-scm.com/',
-			Logo: GitLogo
+			logo: GitLogo
+		},
+		{
+			name: 'NodeJS',
+			url: 'https://nodejs.org/en/',
+			logo: NodejsLogo
 		},
 		{
 			name: 'MUI',
 			url: 'https://mui.com/',
-			Logo: MuiLogo
+			logo: MuiLogo
 		},
 		{
 			name: 'TailwindCSS',
 			url: 'https://tailwindcss.com/',
-			Logo: TailwindLogo
+			logo: TailwindLogo
 		},
 		{
 			name: 'PostgreSQL',
 			url: 'https://www.postgresql.org/',
-			Logo: PostgresqlLogo
+			logo: PostgresqlLogo
 		},
 		{
 			name: 'MongoDB',
 			url: 'https://www.mongodb.com/',
-			Logo: MongodbLogo
+			logo: MongodbLogo
 		}
 	]
 	return (
 		<div id="next" className="container mx-auto py-10 mb-10">
 			<h1 className="font-bold text-4xl mb-10">Technology I Use</h1>
-			<div className="flex flex-wrap justify-between gap-6 relative">
-				{techList.map(({ name, url, Logo }) => (
+			<div className="flex flex-wrap justify-around md:justify-between gap-4 lg:gap-6 relative">
+				{techList.map(({ name, url, logo }) => (
 					<a
 						key={name}
 						href={url}
-						className="w-44 h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-base-100 hover-animation hover:shadow-2xl"
+						className="w-36 h-36 md:w-44 md:h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-base-100 hover-default hover:-translate-y-4 hover:shadow-2xl"
 					>
-						<Image src={Logo} height={62} width={62}></Image>
+						<Image src={logo} height={62} width={62}></Image>
 						<h1 className="font-semibold">{name}</h1>
 					</a>
 				))}
 				<div
-					className="absolute h-36 w-80 -bottom-12 -right-12 -z-10"
+					className="absolute h-36 w-80 -bottom-12 right-0 xl:-right-12 -z-10"
 					style={{
 						backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E")`
 					}}

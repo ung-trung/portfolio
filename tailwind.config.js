@@ -12,12 +12,12 @@ module.exports = {
 		function ({ addComponents }) {
 			addComponents({
 				'.container': {
-					maxWidth: '100%',
+					maxWidth: '85%',
 					'@screen sm': {
-						maxWidth: '640px'
+						maxWidth: '85%'
 					},
 					'@screen md': {
-						maxWidth: '768px'
+						maxWidth: '85%'
 					},
 					'@screen lg': {
 						maxWidth: '1100px'
