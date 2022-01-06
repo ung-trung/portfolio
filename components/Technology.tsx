@@ -64,14 +64,14 @@ const Technology = () => {
 		}
 	]
 	return (
-		<div id="next" className="container mx-auto py-10">
+		<div id="next" className="container mx-auto py-10 mb-10">
 			<h1 className="font-bold text-4xl mb-10">Technology I Use</h1>
 			<div className="flex flex-wrap justify-between gap-6 relative">
 				{techList.map(({ name, url, Logo }) => (
 					<a
 						key={name}
 						href={url}
-						className="w-44 h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-base-100"
+						className="w-44 h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-base-100 hover-animation hover:shadow-2xl"
 					>
 						<Image src={Logo} height={62} width={62}></Image>
 						<h1 className="font-semibold">{name}</h1>
