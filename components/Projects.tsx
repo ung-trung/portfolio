@@ -33,7 +33,7 @@ const Project = () => {
 				<h1 className="font-bold text-primary-content text-4xl mb-10 text-center">My Projects</h1>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
 					{projects.map(({ title, picture, isInternal, description, stacks }) => (
-						<div key={title} className="card bg-base-200 rounded-lg">
+						<div key={title} className="card bg-base-200 rounded-lg shadow-md">
 							<div className="h-52 relative">
 								<Image src={picture} layout="fill" alt={title} objectFit="cover" />
 							</div>

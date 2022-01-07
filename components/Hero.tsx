@@ -8,9 +8,9 @@ const Hero = () => {
 					<p className="mb-2 text-3xl font-semibold">
 						Hello <span className="text-yellow-400">👋</span>
 					</p>
-					<p className="mb-6 text-5xl font-bold">I'm Trung</p>
+					<p className="mb-6 text-5xl font-bold">I&lsquo;m Trung</p>
 					<p className="mb-6 text-2xl ">
-						I'm a passionate <b>web developer</b> and <b>designer</b>. I also love freelancing and
+						I&lsquo;m a passionate <b>web developer</b> and <b>designer</b>. I also love freelancing and
 						contributing to open-source.
 					</p>
 					<p className="text-2xl ">Scroll down to hear more! 👇</p>
