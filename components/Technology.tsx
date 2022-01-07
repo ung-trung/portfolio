@@ -71,10 +71,10 @@ const Technology = () => {
 					<a
 						key={name}
 						href={url}
-						className="w-36 h-36 md:w-44 md:h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-base-100 hover-default hover:-translate-y-4 hover:shadow-2xl"
+						className="w-36 h-36 md:w-44 md:h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-stone-50 hover-default hover:-translate-y-4 hover:shadow-2xl"
 					>
-						<Image className='rounded-xl' src={logo} height={62} width={62} alt={name}></Image>
-						<h1 className="font-semibold">{name}</h1>
+						<Image className="rounded-xl" src={logo} height={62} width={62} alt={name}></Image>
+						<h1 className="font-semibold text-stone-700">{name}</h1>
 					</a>
 				))}
 				<div

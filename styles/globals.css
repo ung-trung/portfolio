@@ -8,5 +8,8 @@
 	}
 }
 html:focus-within {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
+}
+#next {
+	scroll-margin-top: 4rem;
 }
