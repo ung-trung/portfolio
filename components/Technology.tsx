@@ -1,13 +1,3 @@
-import GitLogo from '@/logos/git.svg'
-import Html5Logo from '@/logos/html5.svg'
-import MongodbLogo from '@/logos/mongodb.svg'
-import MuiLogo from '@/logos/mui.svg'
-import NextjsLogo from '@/logos/nextjs.svg'
-import NodejsLogo from '@/logos/nodejs.svg'
-import PostgresqlLogo from '@/logos/postgresql.svg'
-import ReactLogo from '@/logos/react.svg'
-import TailwindLogo from '@/logos/tailwindcss.svg'
-import TypescriptLogo from '@/logos/typescript.svg'
 import Image from 'next/image'
 
 const Technology = () => {
@@ -15,57 +5,57 @@ const Technology = () => {
 		{
 			name: 'HTML5',
 			url: 'https://html.spec.whatwg.org/',
-			logo: Html5Logo
+			logo: '/logos/html5.svg'
 		},
 		{
 			name: 'TypeScript',
 			url: 'https://www.typescriptlang.org/',
-			logo: TypescriptLogo
+			logo: '/logos/typescript.svg'
 		},
 		{
 			name: 'React',
 			url: 'https://reactjs.org/',
-			logo: ReactLogo
+			logo: '/logos/react.svg'
 		},
 		{
 			name: 'NextJS',
 			url: 'https://nextjs.org/',
-			logo: NextjsLogo
+			logo: '/logos/nextjs.svg'
 		},
 		{
 			name: 'Git',
 			url: 'https://git-scm.com/',
-			logo: GitLogo
+			logo: '/logos/git.svg'
 		},
 		{
 			name: 'NodeJS',
 			url: 'https://nodejs.org/en/',
-			logo: NodejsLogo
+			logo: '/logos/nodejs.svg'
 		},
 		{
 			name: 'MUI',
 			url: 'https://mui.com/',
-			logo: MuiLogo
+			logo: '/logos/mui.svg'
 		},
 		{
 			name: 'TailwindCSS',
 			url: 'https://tailwindcss.com/',
-			logo: TailwindLogo
+			logo: '/logos/tailwindcss.svg'
 		},
 		{
 			name: 'PostgreSQL',
 			url: 'https://www.postgresql.org/',
-			logo: PostgresqlLogo
+			logo: '/logos/postgresql.svg'
 		},
 		{
 			name: 'MongoDB',
 			url: 'https://www.mongodb.com/',
-			logo: MongodbLogo
+			logo: '/logos/mongodb.svg'
 		}
 	]
 	return (
 		<div id="next" className="container mx-auto py-10 mb-10 scroll-mt-16">
-			<h1 className="font-bold text-4xl mb-10">Technology I Use</h1>
+			<h1 className="font-bold text-4xl mb-10">My Favorite Tech</h1>
 			<div className="flex flex-wrap justify-around md:justify-between gap-4 lg:gap-6 relative">
 				{techList.map(({ name, url, logo }) => (
 					<a
@@ -73,7 +63,16 @@ const Technology = () => {
 						href={url}
 						className="w-36 h-36 md:w-44 md:h-44 shadow-xl rounded-lg flex flex-col justify-center items-center gap-6 cursor-pointer z-10 bg-zinc-50 hover-default hover:-translate-y-4 hover:shadow-2xl"
 					>
-						<Image className="rounded-xl" src={logo} height={62} width={62} alt={name}></Image>
+						<Image
+							lazyBoundary="500px"
+							className="rounded-xl"
+							src={logo}
+							blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
+							placeholder="blur"
+							height={62}
+							width={62}
+							alt={name}
+						></Image>
 						<h1 className="font-semibold text-zinc-700">{name}</h1>
 					</a>
 				))}

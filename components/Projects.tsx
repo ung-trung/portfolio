@@ -4,7 +4,7 @@ const projects = [
 	{
 		id: 'dashboard',
 		modalId: 'dashboard-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/dashboard-1.png'],
 		title: 'Dashboard',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -14,7 +14,7 @@ const projects = [
 	{
 		id: 'customer-journey',
 		modalId: 'customer-journey-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/customer-journey-3.png'],
 		title: 'Customer Journey',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -24,7 +24,7 @@ const projects = [
 	{
 		id: 'booking-widget',
 		modalId: 'booking-widget-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/booking-widget-1.png'],
 		title: 'Booking Widget',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -34,7 +34,7 @@ const projects = [
 	{
 		id: 'data-4-health',
 		modalId: 'data-4-health-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/data-4-health-1.png'],
 		title: 'Data 4 Health',
 		description:
 			'https://amcellsim.netlify.app/ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -44,7 +44,7 @@ const projects = [
 	{
 		id: 'bumi-cafe',
 		modalId: 'bumi-cafe-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/bumi.png'],
 		title: 'Bumi Cafe',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -54,7 +54,7 @@ const projects = [
 	{
 		id: 'schedulable-todo',
 		modalId: 'schedulable-todo-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/schedulable-toto-1.png'],
 		title: 'Schedulable Todo',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -64,7 +64,7 @@ const projects = [
 	{
 		id: 'contact-manager',
 		modalId: 'contact-manager-modal',
-		picture: 'https://picsum.photos/id/1005/400/400',
+		pictures: ['/images/contact-manager-1.png'],
 		title: 'Contact Manager',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -79,10 +79,19 @@ const Project = () => {
 			<div className="mx-auto container ">
 				<h1 className="font-bold text-primary-content text-4xl mb-10 text-center">My Projects</h1>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-					{projects.map(({ id, modalId, title, picture, type, description, stacks }) => (
+					{projects.map(({ id, modalId, title, pictures, type, description, stacks }) => (
 						<div id={id} key={id} className="card bg-base-200 rounded-lg shadow-md scroll-mt-40">
 							<a href={`#${modalId}`} className="h-52 relative hover-shine">
-								<Image src={picture} layout="fill" alt={title} objectFit="cover" />
+								<Image
+									lazyBoundary="500px"
+									blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
+									priority={true}
+									placeholder="blur"
+									src={pictures[0]}
+									layout="fill"
+									alt={title}
+									objectFit="fill"
+								/>
 							</a>
 
 							<div className="card-body ">
