@@ -4,42 +4,40 @@ import { getCookie, setCookie } from 'react-use-cookie'
 const allThemes = [
 	{ name: 'light', icon: '🌝' },
 	{ name: 'dark', icon: '🌚' },
-	{ name: 'cupcake', icon: '🧁' },
+	// { name: 'cupcake', icon: '🧁' },
 	{ name: 'bumblebee', icon: '🐝' },
-	{ name: 'emerald', icon: '✳️' },
+	// { name: 'emerald', icon: '✳️' },
 	{ name: 'corporate', icon: '🏢' },
 	{ name: 'synthwave', icon: '🌃' },
-	{ name: 'retro', icon: '👴' },
+	// { name: 'retro', icon: '👴' },
 	{ name: 'cyberpunk', icon: '🤖' },
-	{ name: 'valentine', icon: '🌸' },
-	{ name: 'halloween', icon: '🎃' },
-	{ name: 'garden', icon: '🌷' },
+	// { name: 'valentine', icon: '🌸' },
+	// { name: 'halloween', icon: '🎃' },
+	// { name: 'garden', icon: '🌷' },
 	{ name: 'forest', icon: '🌲' },
-	{ name: 'aqua', icon: '🐟' },
-	{ name: 'lofi', icon: '👓' },
-	{ name: 'pastel', icon: '🖍' },
-	{ name: 'fantasy', icon: '🧚' },
+	// { name: 'aqua', icon: '🐟' },
+	// { name: 'lofi', icon: '👓' },
+	// { name: 'pastel', icon: '🖍' },
+	// { name: 'fantasy', icon: '🧚' },
 	{ name: 'wireframe', icon: '📝' },
-	{ name: 'black', icon: '🏴' },
-	{ name: 'luxury', icon: '💎' },
+	// { name: 'black', icon: '🏴' },
+	// { name: 'luxury', icon: '💎' },
 	{ name: 'dracula', icon: '🧛' },
 	{ name: 'cmyk', icon: '🖨' }
 ]
 
 const Header = () => {
 	const [_document, setDocument] = useState<Document | null>(null)
-
 	const [theme, setTheme] = useState('')
 
 	useEffect(() => {
+		// hydrate theme and document
+		const localTheme = getCookie('theme') ? getCookie('theme') : 'bumblebee'
 		setDocument(document)
-	}, [])
-	useEffect(() => {
-		// use effect bc getCookie only has value in client
-		const localTheme = getCookie('theme') ?? ''
 		setTheme(localTheme)
 	}, [])
 	useEffect(() => {
+		// change theme on state change
 		if (_document) _document.documentElement.dataset.theme = theme
 		setCookie('theme', theme)
 	}, [theme])
@@ -74,8 +72,8 @@ const Header = () => {
 							<path d="M1395 736q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path>
 						</svg>
 					</div>{' '}
-					<div className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-52 rounded-b-box bg-base-200 text-base-content">
-						<ul className="p-4 menu compact">
+					<div className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-52 rounded-b-box bg-base-200 text-base-content transition-none-important ">
+						<ul className="p-3 menu compact">
 							{allThemes.map(({ name, icon }) => {
 								const activeClass =
 									typeof window !== 'undefined' ? (theme === name ? 'active' : '') : ''

@@ -1,25 +1,24 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document'
-
-function getCookie(cName: string, cookie: string) {
-	const name = cName + '='
-	const cDecoded = decodeURIComponent(cookie) //to be careful
-	const cArr = cDecoded.split('; ')
-	let res
-	cArr.forEach(val => {
-		if (val.indexOf(name) === 0) res = val.substring(name.length)
-	})
-	return res
-}
+import Cookies from 'cookies'
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
 		const initialProps = await Document.getInitialProps(ctx)
-		const theme = getCookie('theme', ctx.req?.headers.cookie ?? '')
+		const { req, res } = ctx
+		let theme = ''
+		if (req && res) {
+			const cookies = new Cookies(req, res)
+			theme = cookies.get('theme') ?? 'bumblebee'
+			cookies.set('theme', theme, {
+				httpOnly: false
+			})
+		}
 		return { ...initialProps, theme }
 	}
 
 	render() {
 		const { theme } = this.props as any
+
 		return (
 			<Html data-theme={theme} className="scroll-smooth">
 				<Head />

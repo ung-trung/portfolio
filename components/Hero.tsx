@@ -18,7 +18,10 @@ const Hero = () => {
 						technology.
 					</p>
 					<p className="text-2xl ">
-						<a href="#next" className="link link-primary decoration-primary decoration-wavy decoration-2">
+						<a
+							href="#next"
+							className="link link-secondary decoration-secondary decoration-wavy decoration-2 font-semibold"
+						>
 							Scroll down
 						</a>{' '}
 						to hear more! 👇
