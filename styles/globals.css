@@ -20,9 +20,8 @@
 		background-color: rgba(255, 255, 255, 0);
 		@apply delay-200 transition-all duration-500 ease-in-out;
 	}
-	.ro {
-		border-top-left-radius: var(--rounded-box, 1rem);
-		border-top-right-radius: var(--rounded-box, 1rem);
+	.theme-rounded-box {
+		border-radius: var(--rounded-box, 1rem);
 	}
 }
 html:focus-within {

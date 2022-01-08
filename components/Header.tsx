@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getCookie, setCookie } from 'react-use-cookie'
+import { DownloadIcon } from '@heroicons/react/outline/esm'
 
 const allThemes = [
 	{ name: 'light', icon: '🌝' },
@@ -37,7 +38,7 @@ const Header = () => {
 		setTheme(localTheme)
 	}, [])
 	useEffect(() => {
-		// change theme on state change
+		// set theme and cookie on state change
 		if (_document) _document.documentElement.dataset.theme = theme
 		setCookie('theme', theme)
 	}, [theme])
@@ -48,6 +49,9 @@ const Header = () => {
 		>
 			<div className="mx-auto space-x-1 navbar max-w-none">
 				<div className="flex-1"></div>
+				<button className="btn btn-ghost rounded-btn normal-case">
+					<DownloadIcon className="w-6 h-6 mr-2" /> My Résumé
+				</button>
 				<div title="Change Theme" className="dropdown dropdown-end">
 					<div tabIndex={0} className="m-1 normal-case btn-ghost btn">
 						<svg

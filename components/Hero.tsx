@@ -17,7 +17,9 @@ const Hero = () => {
 						I&lsquo;m a passionate <b>web developer</b>. I love creating scalable projects that use latest
 						technology.
 					</p>
+					<button className="mb-6 text-2xl btn btn-secondary animate-wiggle">Download Résumé</button>
 					<p className="text-2xl ">
+						and{' '}
 						<a
 							href="#next"
 							className="link link-secondary decoration-secondary decoration-wavy decoration-2 font-semibold"
