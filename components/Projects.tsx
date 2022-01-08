@@ -248,7 +248,7 @@ interface ModalProps {
 
 const Card = ({ modalId, picture, title, type, description, stacks }: CardProps) => {
 	return (
-		<div className="card bg-base-200 rounded-lg shadow-md scroll-mt-40">
+		<div className="card bg-base-200 rounded-lg shadow-md">
 			<a href={`#${modalId}`} className="h-52 relative hover-shine">
 				<Image
 					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
@@ -385,7 +385,7 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 const Project = () => {
 	const [open, setOpen] = useState(false)
 	return (
-		<div id="projects" className="py-10 bg-primary scroll-mt-16 transition">
+		<div id="projects" className="py-10 bg-primary">
 			<div className="mx-auto container ">
 				<h1 className="font-bold text-primary-content text-4xl mb-10 text-center">My Projects</h1>
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">

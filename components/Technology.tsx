@@ -54,7 +54,7 @@ const Technology = () => {
 		}
 	]
 	return (
-		<div id="next" className="container mx-auto py-10 mb-10 scroll-mt-16">
+		<div id="next" className="container mx-auto py-10 mb-10 sm:scroll-mt-16">
 			<h1 className="font-bold text-4xl mb-10">My Favorite Tech</h1>
 			<div className="flex flex-wrap justify-around md:justify-between gap-4 lg:gap-6 relative">
 				{techList.map(({ name, url, logo }) => (
