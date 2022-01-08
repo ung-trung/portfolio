@@ -14,7 +14,7 @@ const projects = [
 	{
 		id: 'customer-journey',
 		modalId: 'customer-journey-modal',
-		pictures: ['/images/customer-journey-3.png'],
+		pictures: ['/images/customer-journey-3.png', '/images/customer-journey-2.png'],
 		title: 'Customer Journey',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -34,7 +34,7 @@ const projects = [
 	{
 		id: 'data-4-health',
 		modalId: 'data-4-health-modal',
-		pictures: ['/images/data-4-health-1.png'],
+		pictures: ['/images/data-4-health-1.png', '/images/data-4-health-2.png', '/images/data-4-health-3.png'],
 		title: 'Data 4 Health',
 		description:
 			'https://amcellsim.netlify.app/ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -54,7 +54,12 @@ const projects = [
 	{
 		id: 'schedulable-todo',
 		modalId: 'schedulable-todo-modal',
-		pictures: ['/images/schedulable-toto-1.png'],
+		pictures: [
+			'/images/schedulable-toto-1.png',
+			'/images/schedulable-toto-2.png',
+			'/images/schedulable-toto-3.png',
+			'/images/schedulable-toto-4.png'
+		],
 		title: 'Schedulable Todo',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -64,8 +69,18 @@ const projects = [
 	{
 		id: 'contact-manager',
 		modalId: 'contact-manager-modal',
-		pictures: ['/images/contact-manager-1.png'],
+		pictures: ['/images/contact-manager-1.png', '/images/contact-manager-2.png', '/images/contact-manager-3.png'],
 		title: 'Contact Manager',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		type: 'hobby',
+		stacks: ['react', 'react context', 'sematic']
+	},
+	{
+		id: 'github-fetcher',
+		modalId: 'github-fetcher',
+		pictures: ['/images/github-fetcher-1.png', '/images/github-fetcher-2.png'],
+		title: 'Github Fetcher',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 		type: 'hobby',
