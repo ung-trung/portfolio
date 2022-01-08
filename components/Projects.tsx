@@ -78,7 +78,7 @@ const projects = [
 	},
 	{
 		id: 'github-fetcher',
-		modalId: 'github-fetcher',
+		modalId: 'github-fetcher-modal',
 		pictures: ['/images/github-fetcher-1.png', '/images/github-fetcher-2.png'],
 		title: 'Github Fetcher',
 		description:
