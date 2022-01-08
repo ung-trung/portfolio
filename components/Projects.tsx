@@ -178,9 +178,8 @@ const Project = () => {
 									<h3 className="font-semibold text-3xl mb-4">Show case</h3>
 									<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
 										{pictures.map(pic => (
-											<div className="w-12/12 h-64 md:h-80 relative">
+											<div key={pic} className="w-12/12 h-64 md:h-80 relative">
 												<Image
-													key={pic}
 													blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
 													placeholder="blur"
 													src={pic}
