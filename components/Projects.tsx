@@ -44,7 +44,7 @@ const projects = [
 	{
 		id: 'bumi-cafe',
 		modalId: 'bumi-cafe-modal',
-		pictures: ['/images/bumi.png'],
+		pictures: ['/images/bumi.png', '/images/bumi-2.png'],
 		title: 'Bumi Cafe',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -98,14 +98,12 @@ const Project = () => {
 						<div id={id} key={id} className="card bg-base-200 rounded-lg shadow-md scroll-mt-40">
 							<a href={`#${modalId}`} className="h-52 relative hover-shine">
 								<Image
-									lazyBoundary="500px"
 									blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
 									priority={true}
 									placeholder="blur"
 									src={pictures[0]}
 									layout="fill"
 									alt={title}
-									objectFit="fill"
 								/>
 							</a>
 
@@ -117,9 +115,9 @@ const Project = () => {
 									{type === 'freelance' && <div className="badge mx-2 badge-success">freelance</div>}
 									{type === 'hobby' && <div className="badge mx-2 badge-primary">hobby</div>}
 								</h2>
-								<p className="line-clamp-4">{description}</p>
+								<p className="line-clamp-4 mb-4">{description}</p>
 
-								<div className="mt-4 flex gap-1">
+								<div className="flex gap-1">
 									{stacks.map(stack => (
 										<div
 											key={stack}
@@ -148,11 +146,52 @@ const Project = () => {
 								className="modal"
 							>
 								<div
-									className="modal-box sm:max-w-7xl w-8/12"
+									className="modal-box max-h-[95vh] overflow-auto w-full sm:max-w-7xl sm:w-10/12"
 									onClick={e => {
 										e.stopPropagation()
 									}}
+									onScroll={e => {
+										e.stopPropagation()
+									}}
 								>
+									<h1 className="font-bold text-4xl mb-4">
+										{title}{' '}
+										{type === 'internal' && (
+											<div className="badge mx-2 badge-secondary">internal</div>
+										)}
+										{type === 'hackathon' && <div className="badge mx-2 badge-info">hackathon</div>}
+										{type === 'freelance' && (
+											<div className="badge mx-2 badge-success">freelance</div>
+										)}
+										{type === 'hobby' && <div className="badge mx-2 badge-primary">hobby</div>}
+									</h1>
+									<div className="flex gap-1 mb-6">
+										{stacks.map(stack => (
+											<div
+												key={stack}
+												className="badge badge-accent hover-default hover:-translate-y-2 cursor-default"
+											>
+												{stack}
+											</div>
+										))}
+									</div>
+									<h3 className="font-semibold text-3xl mb-4">Show case</h3>
+									<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+										{pictures.map(pic => (
+											<div className="w-12/12 h-64 md:h-80 relative">
+												<Image
+													key={pic}
+													blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
+													placeholder="blur"
+													src={pic}
+													layout="fill"
+													objectFit="cover"
+													alt={title}
+												/>
+											</div>
+										))}
+									</div>
+
 									<p>{description}</p>
 									<div className="modal-action">
 										<a href={`/#modal-close`} className="btn">
