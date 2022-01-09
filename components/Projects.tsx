@@ -379,7 +379,6 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 										placeholder="blur"
 										src={pic}
 										layout="fill"
-										objectFit="cover"
 										alt={title}
 									/>
 								</div>
