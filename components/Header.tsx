@@ -41,7 +41,7 @@ const Header = () => {
 		// set theme and cookie on state change
 		if (_document) _document.documentElement.dataset.theme = theme
 		setCookie('theme', theme)
-	}, [theme])
+	}, [theme, _document])
 	return (
 		<div
 			id="nav"

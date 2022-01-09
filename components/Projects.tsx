@@ -383,7 +383,7 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 							{sources.map(({ name, url, urlText }) => (
 								<li key={name}>
 									{name}:{' '}
-									<a className="link link-secondary" href={url} target="_blank">
+									<a className="link link-secondary" href={url} rel="noreferrer" target="_blank">
 										{urlText}
 									</a>
 								</li>
