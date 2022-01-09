@@ -1,5 +1,6 @@
 import { Typewriter } from 'react-simple-typewriter'
 import { ChevronDownIcon } from '@heroicons/react/outline/esm'
+import Link from 'next/link'
 
 const Hero = () => {
 	return (
@@ -21,20 +22,21 @@ const Hero = () => {
 						Download Résumé
 					</button>
 					<p className="text-xl sm:text-2xl">
-						<a
-							href="#next"
-							className="link link-secondary decoration-secondary decoration-wavy decoration-2 font-semibold"
-						>
-							Scroll down
-						</a>{' '}
+						<Link href="#next">
+							<a className="link link-secondary decoration-secondary decoration-wavy decoration-2 font-semibold">
+								Scroll down
+							</a>
+						</Link>{' '}
 						to hear more! 👇
 					</p>
 				</div>
 				<div className="absolute bottom-2 sm:bottom-6">
 					<button className=" font-bold">
-						<a href="#next">
-							<ChevronDownIcon className="motion-safe:animate-bounce h-10 w-10" />
-						</a>
+						<Link href="#next">
+							<a>
+								<ChevronDownIcon className="motion-safe:animate-bounce h-10 w-10" />
+							</a>
+						</Link>
 					</button>
 				</div>
 			</div>

@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { Transition } from '@headlessui/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const projects = [
 	{
 		id: 'dashboard',
 		duration: '01.11.2019 - present',
-		modalId: 'dashboard-modal',
+		modalId: 'dashboard-modal-open',
 		pictures: ['/images/dashboard-1.png'],
 		title: 'Dashboard',
 		descriptions: [
@@ -26,7 +27,7 @@ const projects = [
 	{
 		id: 'customer-journey',
 		duration: '01.12.2019 - present',
-		modalId: 'customer-journey-modal',
+		modalId: 'customer-journey-modal-open',
 		pictures: [
 			'/images/customer-journey-4.png',
 			'/images/customer-journey-5.png',
@@ -42,7 +43,7 @@ const projects = [
 		type: 'internal',
 		sources: [
 			{
-				name: 'Venue page',
+				name: 'Venue page example',
 				url: 'https://meetingpackage.com/venue/clarion-hotel-helsinki',
 				urlText: 'https://meetingpackage.com/venue/clarion-hotel-helsinki'
 			},
@@ -63,7 +64,7 @@ const projects = [
 	{
 		id: 'booking-widget',
 		duration: '01.10.2019 - present',
-		modalId: 'booking-widget-modal',
+		modalId: 'booking-widget-modal-open',
 		pictures: ['/images/booking-widget-1.png'],
 		title: 'Booking Widget',
 		descriptions: [
@@ -82,8 +83,13 @@ const projects = [
 	{
 		id: 'data-4-health',
 		duration: '25.06.2021 - 31.09.2021',
-		modalId: 'data-4-health-modal',
-		pictures: ['/images/data-4-health-1.png', '/images/data-4-health-2.png', '/images/data-4-health-3.png'],
+		modalId: 'data-4-health-modal-open',
+		pictures: [
+			'/images/data-4-health-1.png',
+			'/images/data-4-health-4.png',
+			'/images/data-4-health-2.png',
+			'/images/data-4-health-3.png'
+		],
 		title: 'Data 4 Health',
 		descriptions: [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -112,7 +118,7 @@ const projects = [
 	{
 		id: 'portfolio',
 		duration: '05.01.2022 - present',
-		modalId: 'portfolio-modal',
+		modalId: 'portfolio-modal-open',
 		pictures: [
 			'/images/portfolio-1.png',
 			'/images/portfolio-2.png',
@@ -128,7 +134,7 @@ const projects = [
 			{
 				name: 'Live page',
 				url: '/',
-				urlText: '/'
+				urlText: 'you are viewing it :)'
 			},
 			{
 				name: 'Github repo',
@@ -141,7 +147,7 @@ const projects = [
 	{
 		id: 'bumi-cafe',
 		duration: '01.06.2020 - 30.06.2020',
-		modalId: 'bumi-cafe-modal',
+		modalId: 'bumi-cafe-modal-open',
 		pictures: ['/images/bumi.png', '/images/bumi-2.png'],
 		title: 'Bumi Cafe',
 		descriptions: [
@@ -161,7 +167,7 @@ const projects = [
 	{
 		id: 'schedulable-todo',
 		duration: '20.06.2019 - 31.12.2019',
-		modalId: 'schedulable-todo-modal',
+		modalId: 'schedulable-todo-modal-open',
 		pictures: [
 			'/images/schedulable-toto-1.png',
 			'/images/schedulable-toto-2.png',
@@ -195,7 +201,7 @@ const projects = [
 	{
 		id: 'contact-manager',
 		duration: '10.06.2019 - 14.06.2019',
-		modalId: 'contact-manager-modal',
+		modalId: 'contact-manager-modal-open',
 		pictures: ['/images/contact-manager-1.png', '/images/contact-manager-2.png', '/images/contact-manager-3.png'],
 		title: 'Contact Manager',
 		descriptions: [
@@ -218,7 +224,7 @@ const projects = [
 	},
 	{
 		id: 'github-fetcher',
-		modalId: 'github-fetcher-modal',
+		modalId: 'github-fetcher-modal-open',
 		duration: '07.06.2019 - 09.06.2019',
 		pictures: ['/images/github-fetcher-1.png', '/images/github-fetcher-2.png'],
 		title: 'Github Fetcher',
@@ -266,9 +272,17 @@ interface ModalProps {
 }
 
 const Card = ({ modalId, picture, title, type, description, stacks }: CardProps) => {
+	const router = useRouter()
 	return (
 		<div className="card bg-base-200 rounded-lg shadow-md">
-			<a href={`#${modalId}`} className="h-52 relative hover-shine">
+			<a
+				onClick={() => {
+					// use router push bc Link wont trigger css target state of modal
+					router.push(`/#${modalId}`)
+				}}
+				href={`#${modalId}`}
+				className="h-52 relative hover-shine"
+			>
 				<Image
 					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
 					priority={true}
@@ -301,6 +315,9 @@ const Card = ({ modalId, picture, title, type, description, stacks }: CardProps)
 				</div>
 				<div className="justify-end card-actions">
 					<a
+						onClick={() => {
+							router.push(`/#${modalId}`)
+						}}
 						href={`#${modalId}`}
 						className="link link-secondary decoration-secondary decoration-wavy decoration-2 text-lg font-semibold"
 					>
@@ -313,22 +330,23 @@ const Card = ({ modalId, picture, title, type, description, stacks }: CardProps)
 }
 
 const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures, sources }: ModalProps) => {
+	const router = useRouter()
 	return (
 		<div
 			id={modalId}
 			onClick={() => {
+				// router  push state to make useRouter get correct asPath
+				router.push(`/#modal-close`)
 				if (window) {
+					// set window href to trigger css target state
 					window.location.href = '/#modal-close'
 				}
 			}}
 			className="modal"
 		>
 			<div
-				className="modal-box max-h-[95vh] overflow-auto w-full sm:max-w-7xl sm:w-10/12"
+				className="modal-box max-h-[85vh] overflow-auto w-full sm:max-w-7xl sm:w-10/12"
 				onClick={e => {
-					e.stopPropagation()
-				}}
-				onScroll={e => {
 					e.stopPropagation()
 				}}
 			>
@@ -392,7 +410,13 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 					</div>
 				</div>
 				<div className="modal-action">
-					<a href={`/#modal-close`} className="btn">
+					<a
+						onClick={() => {
+							router.push(`/#modal-close`)
+						}}
+						href={`/#modal-close`}
+						className="btn"
+					>
 						Close
 					</a>
 				</div>
@@ -402,7 +426,8 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 }
 
 const Project = () => {
-	const [open, setOpen] = useState(false)
+	const [showAll, setShowAll] = useState(false)
+
 	return (
 		<div id="projects" className="py-10 bg-primary">
 			<div className="mx-auto container ">
@@ -461,7 +486,7 @@ const Project = () => {
 							return (
 								<Transition
 									key={id}
-									show={open}
+									show={showAll}
 									enter="transition-opacity duration-150"
 									enterFrom="opacity-0"
 									enterTo="opacity-100"
@@ -476,8 +501,8 @@ const Project = () => {
 						})}
 				</div>
 				<div className="text-right">
-					<button className="btn btn-outline" onClick={() => setOpen(open => !open)}>
-						{open ? 'Show less' : 'Show all'}
+					<button className="btn btn-outline" onClick={() => setShowAll(showAll => !showAll)}>
+						{showAll ? 'Show less' : 'Show all'}
 					</button>
 				</div>
 			</div>

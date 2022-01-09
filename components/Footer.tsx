@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 const Footer = () => {
 	const links = [
 		{
@@ -20,9 +21,11 @@ const Footer = () => {
 	return (
 		<footer className="flex items-center justify-center gap-6 mb-6">
 			{links.map(({ logo, url, alt }) => (
-				<a key={alt} href={url} className="hover-default hover:-translate-y-4 ">
-					<Image src={logo} alt={alt} height={40} width={40} />
-				</a>
+				<Link href={url} key={alt}>
+					<a className="hover-default hover:-translate-y-4 ">
+						<Image src={logo} alt={alt} height={40} width={40} />
+					</a>
+				</Link>
 			))}
 		</footer>
 	)
