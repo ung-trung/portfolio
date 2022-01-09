@@ -27,7 +27,14 @@ const projects = [
 		id: 'customer-journey',
 		duration: '01.12.2019 - present',
 		modalId: 'customer-journey-modal',
-		pictures: ['/images/customer-journey-3.png', '/images/customer-journey-2.png'],
+		pictures: [
+			'/images/customer-journey-4.png',
+			'/images/customer-journey-5.png',
+			'/images/customer-journey-2.png',
+			'/images/customer-journey-3.png',
+			'/images/customer-journey-6.png',
+			'/images/customer-journey-7.png'
+		],
 		title: 'Customer Journey',
 		descriptions: [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
@@ -36,8 +43,19 @@ const projects = [
 		sources: [
 			{
 				name: 'Venue page',
-				url: 'https://meetingpackage.com/venue/radisson-blu-royal-park-hotel-stockholm',
-				urlText: 'https://meetingpackage.com/venue/radisson-blu-royal-park-hotel-stockholm'
+				url: 'https://meetingpackage.com/venue/clarion-hotel-helsinki',
+				urlText: 'https://meetingpackage.com/venue/clarion-hotel-helsinki'
+			},
+			{
+				name: 'MeetingPackage partners',
+				url: 'https://meetingpackage.com/booking-engine-customers',
+				urlText: 'https://meetingpackage.com/booking-engine-customers'
+			},
+			{
+				name: "MeetingPackage's guide to booking engine",
+				url: 'https://blog.meetingpackage.com/beginners-guide-what-is-a-meetings-events-booking-engine-and-why-do-you-need-one',
+				urlText:
+					'https://blog.meetingpackage.com/beginners-guide-what-is-a-meetings-events-booking-engine-and-why-do-you-need-one'
 			}
 		],
 		stacks: ['vue', 'vuex', 'bootstrap']
@@ -78,37 +96,18 @@ const projects = [
 				urlText: 'https://amcellsim.netlify.app'
 			},
 			{
-				name: 'Proof of contribution',
+				name: 'Contribution',
 				url: 'https://www.linkedin.com/posts/analysismode-labs_analysismode-speeds-up-scientific-discovery-activity-6851868916659056641-AdDm',
 				urlText:
 					'https://www.linkedin.com/posts/analysismode-labs_analysismode-speeds-up-scientific-discovery-activity-6851868916659056641-AdDm'
 			},
 			{
 				name: 'Winner status',
-				url: 'https://healthincubatorhelsinki.com/news-and-events/analysismode/',
-				urlText: 'https://healthincubatorhelsinki.com/news-and-events/analysismode/'
+				url: 'https://healthincubatorhelsinki.com/news-and-events/analysismode',
+				urlText: 'https://healthincubatorhelsinki.com/news-and-events/analysismode'
 			}
 		],
 		stacks: ['react', 'mui']
-	},
-	{
-		id: 'bumi-cafe',
-		duration: '01.06.2021 - 30.06.2021',
-		modalId: 'bumi-cafe-modal',
-		pictures: ['/images/bumi.png', '/images/bumi-2.png'],
-		title: 'Bumi Cafe',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
-		type: 'freelance',
-		sources: [
-			{
-				name: 'Bumi frontpage',
-				url: 'https://bumicafe.com',
-				urlText: 'https://bumicafe.com'
-			}
-		],
-		stacks: ['wordpress']
 	},
 	{
 		id: 'portfolio',
@@ -140,6 +139,26 @@ const projects = [
 		stacks: ['react', 'nextjs', 'tailwindcss']
 	},
 	{
+		id: 'bumi-cafe',
+		duration: '01.06.2020 - 30.06.2020',
+		modalId: 'bumi-cafe-modal',
+		pictures: ['/images/bumi.png', '/images/bumi-2.png'],
+		title: 'Bumi Cafe',
+		descriptions: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+		],
+		type: 'freelance',
+		sources: [
+			{
+				name: 'Bumi frontpage',
+				url: 'https://bumicafe.com',
+				urlText: 'https://bumicafe.com'
+			}
+		],
+		stacks: ['wordpress']
+	},
+
+	{
 		id: 'schedulable-todo',
 		duration: '20.06.2019 - 31.12.2019',
 		modalId: 'schedulable-todo-modal',
@@ -157,8 +176,8 @@ const projects = [
 		sources: [
 			{
 				name: 'Live page',
-				url: 'https://trinhtodo.netlify.app/',
-				urlText: 'https://trinhtodo.netlify.app/'
+				url: 'https://trinhtodo.netlify.app',
+				urlText: 'https://trinhtodo.netlify.app'
 			},
 			{
 				name: 'Github frontend repo',
