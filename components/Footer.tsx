@@ -1,21 +1,18 @@
 import Image from 'next/image'
-import GithubLogo from '@/logos/github.svg'
-import LinkedinLogo from '@/logos/linkedin.svg'
-import MailLogo from '@/logos/mail.svg'
 const Footer = () => {
 	const links = [
 		{
-			logo: LinkedinLogo,
+			logo: '/logos/linkedin.svg',
 			url: 'https://www.linkedin.com/in/trung-ung/',
 			alt: 'Linkedin'
 		},
 		{
-			logo: GithubLogo,
+			logo: '/logos/github.svg',
 			url: 'https://github.com/ung-trung',
 			alt: 'Github'
 		},
 		{
-			logo: MailLogo,
+			logo: '/logos/mail.svg',
 			url: 'mailto:ungkientrung@gmail.com',
 			alt: 'Gmail'
 		}
