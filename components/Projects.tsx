@@ -452,13 +452,13 @@ const Modal = ({ modalId, title, extendedDescription, type, duration, stacks, pi
 							window.location.href = '/#modal-close'
 						}
 					}}
-					className="absolute top-4 right-4 btn btn-circle btn-ghost"
+					className="absolute top-0 right-0 md:top-4 md:right-4 btn btn-circle btn-ghost"
 				>
 					<XCircleIcon className="h-9 w-9" />
 				</button>
 				<div className="md:container mx-auto">
-					<h1 className="font-bold text-4xl mb-2">
-						<span className="mr-2"> {title}</span>{' '}
+					<h1 className="font-bold text-3xl md:text-4xl mb-2">
+						<span className="mr-2"> {title}</span>
 						{type === 'internal' && <div className="badge badge-secondary">internal</div>}
 						{type === 'hackathon' && <div className="badge badge-info">hackathon</div>}
 						{type === 'freelance' && <div className="badge badge-success">freelance</div>}
@@ -479,7 +479,10 @@ const Modal = ({ modalId, title, extendedDescription, type, duration, stacks, pi
 						<h3 className="font-semibold text-2xl mb-4">Show case</h3>
 						<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 							{pictures.map(pic => (
-								<div key={pic} className="w-12/12 h-64 md:h-80 relative border mockup-window">
+								<div
+									key={pic}
+									className="w-12/12 h-64 md:h-80 xl:h-[360px] relative border mockup-window"
+								>
 									<Image
 										blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
 										className="border-2 border-gray-400"
