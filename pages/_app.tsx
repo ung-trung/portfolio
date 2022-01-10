@@ -5,23 +5,17 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const [_document, setDocument] = useState<Document | null>(null)
 	const router = useRouter()
-	// check modal open state base on path. not very reliable but work for now
+	// check modal open state base on path. not very reliable but work for now, better look for something liek react nice modal approach
 	let modalOpen = router.asPath.includes('modal-open')
 	useEffect(() => {
-		// hydrate and document
-		setDocument(document)
-	}, [])
-	useEffect(() => {
-		if (_document) {
-			if (modalOpen) {
-				document.body.classList.add('overflow-hidden')
-			} else {
-				document.body.classList.remove('overflow-hidden')
-			}
+		if (modalOpen) {
+			document.body.classList.add('overflow-hidden')
+		} else {
+			document.body.classList.remove('overflow-hidden')
 		}
-	}, [modalOpen, _document])
+	}, [modalOpen])
+
 	return <Component {...pageProps} />
 }
 
