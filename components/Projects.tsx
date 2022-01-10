@@ -1,29 +1,11 @@
 import Image from 'next/image'
 import { Transition } from '@headlessui/react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { XCircleIcon } from '@heroicons/react/solid/esm'
 
 const projects = [
-	{
-		id: 'dashboard',
-		duration: '01.11.2019 - present',
-		modalId: 'dashboard-modal-open',
-		pictures: ['/images/dashboard-1.png'],
-		title: 'Dashboard',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			'asd asd asd '
-		],
-		type: 'internal',
-		sources: [
-			{
-				name: 'Supplier register',
-				url: 'https://meetingpackage.com/venue-self-register',
-				urlText: 'https://meetingpackage.com/venue-self-register'
-			}
-		],
-		stacks: ['react', 'redux', 'formik', 'mui']
-	},
 	{
 		id: 'customer-journey',
 		duration: '01.12.2019 - present',
@@ -31,15 +13,44 @@ const projects = [
 		pictures: [
 			'/images/customer-journey-4.png',
 			'/images/customer-journey-5.png',
-			'/images/customer-journey-2.png',
-			'/images/customer-journey-3.png',
 			'/images/customer-journey-6.png',
 			'/images/customer-journey-7.png'
 		],
 		title: 'Customer Journey',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		description: `MeetingPackage's Customer Journey project involves all the development in customer-facing pages. A typical journey includes 5 pages: Front page, Search page, Checkout page, Order confirmation page, and Order management page.`,
+		extendedDescription: (
+			<>
+				<p className="mb-2">
+					MeetingPackage&#39;s Customer Journey project involves all the development in customer-facing pages.
+					This is a white-label solution, meaning different hotels can have the looks and feels that match
+					their brands, thus increasing the customer experiences. A typical journey includes 5 pages:
+				</p>
+				<ul className="w-full steps-vertical md:steps-horizontal steps mb-2 md:mb-4">
+					<li className="step step-primary">Front page</li>
+					<li className="step step-primary">Search page</li>
+					<li className="step step-primary">Checkout page</li>
+					<li className="step step-primary">Order confirmation page</li>
+					<li className="step step-primary">Order management page</li>
+				</ul>
+				<p className="mb-2">My main responsibilities includes:</p>
+				<ul className="list-disc ml-10 mb-2">
+					<li>Develop, Design, and Maintain customer-facing pages in Vue</li>
+					<li>Maintain legacy projects</li>
+					<li>Assist in backend development</li>
+				</ul>
+				<p>
+					The white-label solution is used by many hotel chains:{' '}
+					<Link href="https://www.scandichotels.fi/">
+						<a className="link link-secondary">Scandic Hotels</a>
+					</Link>{' '}
+					and{' '}
+					<Link href="https://www.nordicchoicehotels.com/">
+						<a className="link link-secondary">Nordic Choice Hotels</a>
+					</Link>{' '}
+					to name a few.
+				</p>
+			</>
+		),
 		type: 'internal',
 		sources: [
 			{
@@ -48,34 +59,106 @@ const projects = [
 				urlText: 'https://meetingpackage.com/venue/clarion-hotel-helsinki'
 			},
 			{
-				name: 'MeetingPackage partners',
+				name: 'Partner example',
 				url: 'https://meetingpackage.com/booking-engine-customers',
 				urlText: 'https://meetingpackage.com/booking-engine-customers'
 			},
 			{
-				name: "MeetingPackage's guide to booking engine",
-				url: 'https://blog.meetingpackage.com/beginners-guide-what-is-a-meetings-events-booking-engine-and-why-do-you-need-one',
+				name: 'HotelTechReport on product',
+				url: 'https://hoteltechreport.com/meetings-and-events/venue-booking-platforms/meetingpackagecom-booking-engine',
 				urlText:
-					'https://blog.meetingpackage.com/beginners-guide-what-is-a-meetings-events-booking-engine-and-why-do-you-need-one'
+					'https://hoteltechreport.com/meetings-and-events/venue-booking-platforms/meetingpackagecom-booking-engine'
 			}
 		],
 		stacks: ['vue', 'vuex', 'bootstrap']
 	},
 	{
+		id: 'dashboard',
+		duration: '01.11.2019 - present',
+		modalId: 'dashboard-modal-open',
+		pictures: ['/images/dashboard-1.png', '/images/dashboard-2.png'],
+		title: 'Venue & Sales Management',
+		description: `MeetingPackage's Venue and Sales management software is an all-in-one solution that helps venue suppliers easily manage their contents, inventory, and sale analytics.`,
+		extendedDescription: (
+			<>
+				<p className="mb-2">
+					MeetingPackage&#39;s Venue and Sales management software is an all-in-one solution that helps venue
+					suppliers easily manage their contents, inventory, and sale analytics. During my position here as a
+					Frontend Developer, my main tasks in the project include:
+				</p>
+
+				<ul className="list-disc ml-10 mb-2">
+					<li>Redesigning and Maintaining legacy dashboard pages</li>
+					<li>Initiating and Developing new pages in React</li>
+					<li>Assist in backend development</li>
+				</ul>
+				<p>
+					After 2 years since I joined, the software is voted as the{' '}
+					<Link href="https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels">
+						<a className="link link-secondary">#2 Group Sales Management Software provider</a>
+					</Link>{' '}
+					in the 2021 HotelTechAwards. Many Hoteliers has reviewed this software as easy-to-use, appealing,
+					and having good user experiences.
+				</p>
+			</>
+		),
+		type: 'internal',
+		sources: [
+			{
+				name: 'Venue & Sales Management',
+				url: 'https://support.meetingpackage.com/knowledge-base/cloud-based-venue-sales-management',
+				urlText: 'https://support.meetingpackage.com/knowledge-base/cloud-based-venue-sales-management'
+			},
+			{
+				name: 'HotelTechReport on product',
+				url: 'https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels',
+				urlText: 'https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels'
+			},
+			{
+				name: 'Product/Feature updates',
+				url: 'https://support.meetingpackage.com/knowledge-base/product-feature-updates',
+				urlText: 'https://support.meetingpackage.com/knowledge-base/product-feature-updates'
+			}
+		],
+		stacks: ['react', 'redux', 'formik', 'mui']
+	},
+
+	{
 		id: 'booking-widget',
 		duration: '01.10.2019 - present',
 		modalId: 'booking-widget-modal-open',
 		pictures: ['/images/booking-widget-1.png'],
-		title: 'Booking Widget',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		title: 'Booking Engine Widget',
+		description: `MeetingPackage's Booking Engine Widget allows customer to easily make a search to venue's meeting room and event space services. It is a piece of HTML code that even a novice developer can copy and paste and use it on any websites. This is a white-label solution, meaning different hotels can have the looks and feels that match their brands, thus increasing the customer experiences.`,
+		extendedDescription: (
+			<>
+				<p className="mb-2">
+					MeetingPackage&#39;s Booking Engine Widget allows customer to easily make a search to venue&#39;s
+					meeting room and event space services. It is a piece of HTML code that even a novice developer can
+					copy and paste and use it on any websites. This is a white-label solution, meaning different hotels
+					can have the looks and feels that match their brands, thus increasing the customer experiences.
+				</p>
+				<p>
+					In this project, my responsibility is to develop and design the whole widget solution. This project
+					gives me a perfect opportunity to try out{' '}
+					<Link href="https://storybook.js.org/">
+						<a className="link link-secondary">Storybook</a>
+					</Link>{' '}
+					, it helps me easily share the design between team members and receive quick feedbacks.
+				</p>
+			</>
+		),
 		type: 'internal',
 		sources: [
 			{
 				name: 'Live usage',
 				url: 'https://www.scandichotels.com/conferences-meetings',
 				urlText: 'https://www.scandichotels.com/conferences-meetings'
+			},
+			{
+				name: 'Widget creation',
+				url: 'https://support.meetingpackage.com/knowledge-base/create-booking-engine',
+				urlText: 'https://support.meetingpackage.com/knowledge-base/create-booking-engine'
 			}
 		],
 		stacks: ['react', 'mui', 'storybook']
@@ -90,10 +173,26 @@ const projects = [
 			'/images/data-4-health-2.png',
 			'/images/data-4-health-3.png'
 		],
-		title: 'Data 4 Health',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		title: 'Data 4 Healthy Recovery',
+		description:
+			'In this hackathon, I am in Cell-Culture Simulator team and my responsibility is to create an interactive dashboard that enable scientist to perform cell-culture simulations.',
+		extendedDescription: (
+			<>
+				<p className="mb-2">
+					Data 4 Healthy Recovery is a hackathon with an emphasis on smart health, dedicated to solving this
+					sectore&#39;s most pressing challenges.
+				</p>
+				<p className="mb-2">
+					In this hackathon, I am in Cell-Culture Simulator team and my responsibility is to create an
+					interactive dashboard that enable scientist to perform cell-culture simulations in a computer or
+					mobile devices.
+				</p>
+				<p>
+					As a result, our team was honorably chosen as the winning team in the EU Data 4 Healthy Recovery
+					Accelerator.
+				</p>
+			</>
+		),
 		type: 'hackathon',
 		sources: [
 			{
@@ -125,10 +224,9 @@ const projects = [
 			'/images/portfolio-3.png',
 			'/images/portfolio-4.png'
 		],
-		title: 'Portfolio',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		title: 'This Portfolio :)',
+		description: 'To be updated...',
+		extendedDescription: <div> To be updated...</div>,
 		type: 'hobby',
 		sources: [
 			{
@@ -150,9 +248,8 @@ const projects = [
 		modalId: 'bumi-cafe-modal-open',
 		pictures: ['/images/bumi.png', '/images/bumi-2.png'],
 		title: 'Bumi Cafe',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		description: 'To be updated...',
+		extendedDescription: <div> To be updated...</div>,
 		type: 'freelance',
 		sources: [
 			{
@@ -175,9 +272,8 @@ const projects = [
 			'/images/schedulable-toto-4.png'
 		],
 		title: 'Schedulable Todo',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		description: 'To be updated...',
+		extendedDescription: <div> To be updated...</div>,
 		type: 'hobby',
 		sources: [
 			{
@@ -204,9 +300,8 @@ const projects = [
 		modalId: 'contact-manager-modal-open',
 		pictures: ['/images/contact-manager-1.png', '/images/contact-manager-2.png', '/images/contact-manager-3.png'],
 		title: 'Contact Manager',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		description: 'To be updated...',
+		extendedDescription: <div> To be updated...</div>,
 		type: 'hobby',
 		sources: [
 			{
@@ -228,9 +323,8 @@ const projects = [
 		duration: '07.06.2019 - 09.06.2019',
 		pictures: ['/images/github-fetcher-1.png', '/images/github-fetcher-2.png'],
 		title: 'Github Fetcher',
-		descriptions: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-		],
+		description: 'To be updated...',
+		extendedDescription: <div> To be updated...</div>,
 		type: 'hobby',
 		sources: [
 			{
@@ -259,7 +353,7 @@ interface CardProps {
 interface ModalProps {
 	modalId: string
 	title: string
-	descriptions: string[]
+	extendedDescription: JSX.Element
 	type: string
 	duration: string
 	stacks: string[]
@@ -295,11 +389,11 @@ const Card = ({ modalId, picture, title, type, description, stacks }: CardProps)
 
 			<div className="card-body ">
 				<h2 className="card-title">
-					{title}
-					{type === 'internal' && <div className="badge mx-2 badge-secondary">internal</div>}
-					{type === 'hackathon' && <div className="badge mx-2 badge-info">hackathon</div>}
-					{type === 'freelance' && <div className="badge mx-2 badge-success">freelance</div>}
-					{type === 'hobby' && <div className="badge mx-2 badge-primary">hobby</div>}
+					<span className="mr-2"> {title}</span>{' '}
+					{type === 'internal' && <div className="badge badge-secondary">internal</div>}
+					{type === 'hackathon' && <div className="badge badge-info">hackathon</div>}
+					{type === 'freelance' && <div className="badge badge-success">freelance</div>}
+					{type === 'hobby' && <div className="badge badge-primary">hobby</div>}
 				</h2>
 				<p className="line-clamp-4 mb-4">{description}</p>
 
@@ -329,7 +423,7 @@ const Card = ({ modalId, picture, title, type, description, stacks }: CardProps)
 	)
 }
 
-const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures, sources }: ModalProps) => {
+const Modal = ({ modalId, title, extendedDescription, type, duration, stacks, pictures, sources }: ModalProps) => {
 	const router = useRouter()
 	return (
 		<div
@@ -350,12 +444,25 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 					e.stopPropagation()
 				}}
 			>
-				<div className="container mx-auto">
+				<button
+					onClick={() => {
+						router.push(`/#modal-close`)
+						if (window) {
+							// set window href to trigger css target state
+							window.location.href = '/#modal-close'
+						}
+					}}
+					className="absolute top-4 right-4 btn btn-circle btn-ghost"
+				>
+					<XCircleIcon className="h-9 w-9" />
+				</button>
+				<div className="md:container mx-auto">
 					<h1 className="font-bold text-4xl mb-2">
-						{title} {type === 'internal' && <div className="badge mx-2 badge-secondary">internal</div>}
-						{type === 'hackathon' && <div className="badge mx-2 badge-info">hackathon</div>}
-						{type === 'freelance' && <div className="badge mx-2 badge-success">freelance</div>}
-						{type === 'hobby' && <div className="badge mx-2 badge-primary">hobby</div>}
+						<span className="mr-2"> {title}</span>{' '}
+						{type === 'internal' && <div className="badge badge-secondary">internal</div>}
+						{type === 'hackathon' && <div className="badge badge-info">hackathon</div>}
+						{type === 'freelance' && <div className="badge badge-success">freelance</div>}
+						{type === 'hobby' && <div className="badge badge-primary">hobby</div>}
 					</h1>
 					<h3 className="text-xl mb-2">{duration}</h3>
 					<div className="flex gap-1 mb-6">
@@ -388,11 +495,7 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 
 					<div className="mb-6">
 						<h3 className="font-semibold text-2xl mb-4 ">Description</h3>
-						{descriptions.map(description => (
-							<p key={description} className="mb-2 last:mb-0">
-								{description}
-							</p>
-						))}
+						{extendedDescription}
 					</div>
 					<div className="mb-6">
 						<h3 className="font-semibold text-2xl mb-4">Sources</h3>
@@ -400,9 +503,11 @@ const Modal = ({ modalId, title, descriptions, type, duration, stacks, pictures,
 							{sources.map(({ name, url, urlText }) => (
 								<li key={name}>
 									{name}:{' '}
-									<a className="link link-secondary" href={url} rel="noreferrer" target="_blank">
-										{urlText}
-									</a>
+									<Link href={url}>
+										<a className="link link-secondary" rel="noreferrer" target="_blank">
+											{urlText}
+										</a>
+									</Link>
 								</li>
 							))}
 						</ul>
@@ -434,73 +539,99 @@ const Project = () => {
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
 					{projects
 						.slice(0, 6)
-						.map(({ id, duration, modalId, title, pictures, type, descriptions, stacks, sources }) => {
-							const modalProps: ModalProps = {
+						.map(
+							({
+								id,
 								duration,
 								modalId,
 								title,
 								pictures,
 								type,
-								descriptions,
+								description,
+								extendedDescription,
 								stacks,
 								sources
+							}) => {
+								const modalProps: ModalProps = {
+									duration,
+									modalId,
+									title,
+									pictures,
+									type,
+									extendedDescription: extendedDescription,
+									stacks,
+									sources
+								}
+								const cardProps: CardProps = {
+									modalId,
+									picture: pictures[0],
+									title,
+									type,
+									description,
+									stacks
+								}
+								return (
+									<div key={id}>
+										<Card {...cardProps} />
+										<Modal {...modalProps} />
+									</div>
+								)
 							}
-							const cardProps: CardProps = {
-								modalId,
-								picture: pictures[0],
-								title,
-								type,
-								description: descriptions[0],
-								stacks
-							}
-							return (
-								<div key={id}>
-									<Card {...cardProps} />
-									<Modal {...modalProps} />
-								</div>
-							)
-						})}
+						)}
 
 					{projects
 						.slice(6)
-						.map(({ id, duration, modalId, title, pictures, type, descriptions, stacks, sources }) => {
-							const modalProps: ModalProps = {
+						.map(
+							({
+								id,
 								duration,
 								modalId,
 								title,
 								pictures,
 								type,
-								descriptions,
+								description,
+								extendedDescription,
 								stacks,
 								sources
+							}) => {
+								const modalProps: ModalProps = {
+									duration,
+									modalId,
+									title,
+									pictures,
+									type,
+									extendedDescription: extendedDescription,
+									stacks,
+									sources
+								}
+								const cardProps: CardProps = {
+									modalId,
+									picture: pictures[0],
+									title,
+									type,
+									description,
+									stacks
+								}
+								return (
+									<Transition
+										key={id}
+										show={showAll}
+										enter="transition-opacity duration-150"
+										enterFrom="opacity-0"
+										enterTo="opacity-100"
+										leave="transition-opacity duration-150"
+										leaveFrom="opacity-100"
+										leaveTo="opacity-0"
+									>
+										<Card {...cardProps} />
+										<Modal {...modalProps} />
+									</Transition>
+								)
 							}
-							const cardProps: CardProps = {
-								modalId,
-								picture: pictures[0],
-								title,
-								type,
-								description: descriptions[0],
-								stacks
-							}
-							return (
-								<Transition
-									key={id}
-									show={showAll}
-									enter="transition-opacity duration-150"
-									enterFrom="opacity-0"
-									enterTo="opacity-100"
-									leave="transition-opacity duration-150"
-									leaveFrom="opacity-100"
-									leaveTo="opacity-0"
-								>
-									<Card {...cardProps} />
-									<Modal {...modalProps} />
-								</Transition>
-							)
-						})}
+						)}
 				</div>
 				<div className="text-right">
-					<button className="btn btn-outline" onClick={() => setShowAll(showAll => !showAll)}>
+					<button className="btn" onClick={() => setShowAll(showAll => !showAll)}>
 						{showAll ? 'Show less' : 'Show all'}
 					</button>
 				</div>
