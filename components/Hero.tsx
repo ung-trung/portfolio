@@ -31,8 +31,8 @@ const Hero = () => {
 					</p>
 				</div>
 				<div className="absolute bottom-2 sm:bottom-6">
-					<Link aria-label="scroll to next" href="#next">
-						<a className="btn btn-ghost btn-circle motion-safe:animate-bounce ">
+					<Link href="#next">
+						<a aria-label="scroll to next" className="btn btn-ghost btn-circle motion-safe:animate-bounce ">
 							<ChevronDownIcon className="h-10 w-10" />
 						</a>
 					</Link>
