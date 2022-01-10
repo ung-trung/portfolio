@@ -188,8 +188,7 @@ const projects = [
 					mobile devices.
 				</p>
 				<p>
-					As a result, our team was honorably chosen as the winning team in the EU Data 4 Healthy Recovery
-					Accelerator.
+					As a result, our team was chosen as the winning team in the EU Data 4 Healthy Recovery Accelerator.
 				</p>
 			</>
 		),
@@ -226,7 +225,11 @@ const projects = [
 		],
 		title: 'This Portfolio :)',
 		description: 'To be updated...',
-		extendedDescription: <div> To be updated...</div>,
+		extendedDescription: (
+			<>
+				<p className="mb-2"> To be updated...</p>
+			</>
+		),
 		type: 'hobby',
 		sources: [
 			{
@@ -439,7 +442,7 @@ const Modal = ({ modalId, title, extendedDescription, type, duration, stacks, pi
 			className="modal"
 		>
 			<div
-				className="modal-box max-h-[85vh] overflow-auto w-full sm:max-w-7xl sm:w-10/12"
+				className="modal-box max-h-[85vh] overflow-x-hidden overflow-y-auto w-full sm:max-w-7xl sm:w-10/12"
 				onClick={e => {
 					e.stopPropagation()
 				}}
