@@ -20,7 +20,7 @@ class MyDocument extends Document {
 		const { theme } = this.props as any
 
 		return (
-			<Html data-theme={theme} className="scroll-smooth">
+			<Html data-theme={theme} lang="en" className="scroll-smooth">
 				<Head />
 				<body>
 					<Main />

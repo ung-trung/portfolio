@@ -227,7 +227,15 @@ const projects = [
 		description: 'To be updated...',
 		extendedDescription: (
 			<>
-				<p className="mb-2"> To be updated...</p>
+				<p className="mb-2">
+					This is the project of the Portfolio you are seeing. It is built from scratch using NextJs and
+					TailwindCss. Here are some hight light of the websites:
+					<ul className="list-disc ml-10 mb-2">
+						<li>Redesigning and Maintaining legacy dashboard pages</li>
+						<li>Initiating and Developing new pages in React</li>
+						<li>Assist in backend development</li>
+					</ul>
+				</p>
 			</>
 		),
 		type: 'hobby',
