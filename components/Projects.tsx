@@ -17,22 +17,23 @@ const projects = [
 			'/images/customer-journey-7.png'
 		],
 		title: 'Customer Journey',
-		description: `MeetingPackage's Customer Journey project involves all the development in customer-facing pages. A typical journey includes 5 pages: Front page, Search page, Checkout page, Order confirmation page, and Order management page.`,
+		description: `MeetingPackage's Customer Journey project involves all the development in customer-facing pages. A typical journey includes 6 pages: Front page, Search page, Venue page, Checkout page, Order confirmation page, and Order management page.`,
 		extendedDescription: (
 			<>
 				<p className="mb-2">
 					MeetingPackage&#39;s Customer Journey project involves all the development in customer-facing pages.
 					This is a white-label solution, meaning different hotels can have the looks and feels that match
-					their brands, thus increasing the customer experiences. A typical journey includes 5 pages:
+					their brands, thus increasing the customer experiences. A typical journey includes 6 pages:
 				</p>
-				<ul className="w-full steps-vertical md:steps-horizontal steps mb-2 md:mb-4">
+				<ul className="w-full steps-vertical lg:steps-horizontal steps mb-2 md:mb-4">
 					<li className="step step-primary">Front page</li>
 					<li className="step step-primary">Search page</li>
+					<li className="step step-primary">Venue page</li>
 					<li className="step step-primary">Checkout page</li>
 					<li className="step step-primary">Order confirmation page</li>
 					<li className="step step-primary">Order management page</li>
 				</ul>
-				<p className="mb-2">My main responsibilities includes:</p>
+				<p className="mb-2">My main responsibilities include:</p>
 				<ul className="list-disc ml-10 mb-2">
 					<li>Develop, Design, and Maintain customer-facing pages in Vue</li>
 					<li>Maintain legacy projects</li>
@@ -93,12 +94,12 @@ const projects = [
 					<li>Assist in backend development</li>
 				</ul>
 				<p>
-					After 2 years since I joined, the software is voted as the{' '}
+					In two-year time, the software is constantly refined, and it is voted as the{' '}
 					<Link href="https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels">
 						<a className="link link-secondary">#2 Group Sales Management Software provider</a>
 					</Link>{' '}
 					in the 2021 HotelTechAwards. Many Hoteliers has reviewed this software as easy-to-use, appealing,
-					and having good user experiences.
+					and providing good user experiences.
 				</p>
 			</>
 		),
@@ -221,21 +222,29 @@ const projects = [
 			'/images/portfolio-1.png',
 			'/images/portfolio-2.png',
 			'/images/portfolio-3.png',
-			'/images/portfolio-4.png'
+			'/images/portfolio-4.png',
+			'/images/portfolio-5.png'
 		],
 		title: 'This Portfolio :)',
-		description: 'To be updated...',
+		description:
+			'This is the project of the Portfolio you are seeing. It is built from scratch using NextJs and Tailwind CSS with a focus on use experience, web performance, and best practices. Some highlights of the websites include',
 		extendedDescription: (
 			<>
 				<p className="mb-2">
 					This is the project of the Portfolio you are seeing. It is built from scratch using NextJs and
-					TailwindCss. Here are some hight light of the websites:
-					<ul className="list-disc ml-10 mb-2">
-						<li>Redesigning and Maintaining legacy dashboard pages</li>
-						<li>Initiating and Developing new pages in React</li>
-						<li>Assist in backend development</li>
-					</ul>
+					Tailwind CSS with a focus on use experience, web performance, and best practices. Some highlights of
+					the websites include:
 				</p>
+				<ul className="list-disc ml-10 mb-2">
+					<li>
+						Brilliant Google Lighthouse report. 💯 on <b>Performance</b>, <b>Best Practices</b> and{' '}
+						<b>SEO</b>; 97 on <b>Accessibility</b>.
+					</li>
+					<li>
+						Project is themable. Theme value is stored on <b>cookie</b>, thus making theme applied on the
+						server. Prevent flickering issues that happen to client-side theme-detecting method.
+					</li>
+				</ul>
 			</>
 		),
 		type: 'hobby',
@@ -492,7 +501,7 @@ const Modal = ({ modalId, title, extendedDescription, type, duration, stacks, pi
 							{pictures.map(pic => (
 								<div
 									key={pic}
-									className="w-12/12 h-64 md:h-80 xl:h-[360px] relative border mockup-window"
+									className="w-12/12 aspect-[16/10] xl:h-[360px] xl:aspect-auto relative border mockup-window"
 								>
 									<Image
 										blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8nwYAAmoBZ0eMiB8AAAAASUVORK5CYII="
