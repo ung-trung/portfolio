@@ -23,7 +23,8 @@ const projects = [
 				<p className="mb-2">
 					MeetingPackage&#39;s Customer Journey project involves all the development in customer-facing pages.
 					This is a white-label solution, meaning different hotels can have the looks and feels that match
-					their brands, thus increasing the customer experiences. A typical journey includes 6 pages:
+					their brands, thus making the booking flow from host website to MeetingPackage solution as seamless
+					as possible. A typical journey includes 6 pages:
 				</p>
 				<ul className="w-full steps-vertical lg:steps-horizontal steps mb-2 md:mb-4">
 					<li className="step step-primary">Front page</li>
@@ -242,7 +243,8 @@ const projects = [
 					</li>
 					<li>
 						Project is themable. Theme value is stored on <b>cookie</b>, thus making theme applied on the
-						server. Prevent flickering issues that happen to client-side theme-detecting methods.
+						server. Prevent either flickering (bad UX) or delay rendering (bad performance and SEO) issues
+						that happen to client-side theme-detecting methods.
 					</li>
 				</ul>
 			</>
@@ -268,8 +270,24 @@ const projects = [
 		modalId: 'bumi-cafe-modal-open',
 		pictures: ['/images/bumi.png', '/images/bumi-2.png'],
 		title: 'Bumi Cafe',
-		description: 'To be updated...',
-		extendedDescription: <div> To be updated...</div>,
+		description:
+			'The project was initiated and maintained by another team. However, due to late response and lack of competencies, the other team was not able to meet the deadline of this project. Because of this, I took the opportunity to work for Bumi as a freelancer',
+		extendedDescription: (
+			<>
+				<p className="mb-2">
+					The project was initiated and maintained by another team. However, due to late response and lack of
+					competencies, the other team was not able to meet the deadline of this project. Because of this, I
+					took the opportunity to work for Bumi as a freelancer.
+				</p>
+				<p className="mb-2">My responsibilities in this project includes</p>
+
+				<ul className="list-disc ml-10 mb-2">
+					<li>Develop two new pages: About page and Catering page</li>
+					<li>Fix styling issues in existing customer-facing pages</li>
+					<li>Develop some new features for admin users</li>
+				</ul>
+			</>
+		),
 		type: 'freelance',
 		sources: [
 			{
