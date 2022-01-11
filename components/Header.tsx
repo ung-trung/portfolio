@@ -49,9 +49,9 @@ const Header = () => {
 		>
 			<div className="mx-auto space-x-1 navbar max-w-none">
 				<div className="flex-1"></div>
-				<button className="btn btn-ghost rounded-btn normal-case">
+				<a href="/resume.pdf" download="Trung Ung Portfolio" className="btn btn-ghost rounded-btn normal-case">
 					<DownloadIcon className="w-6 h-6 mr-2" /> My Résumé
-				</button>
+				</a>
 				<div title="Change Theme" className="dropdown dropdown-end">
 					<div tabIndex={0} className="m-1 normal-case btn-ghost btn">
 						<svg

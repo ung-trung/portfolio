@@ -95,12 +95,12 @@ const projects = [
 					<li>Assist in backend development</li>
 				</ul>
 				<p>
-					In two-year time, the software is constantly refined, and it is voted as the{' '}
-					<Link href="https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels">
-						<a className="link link-secondary">#2 Group Sales Management Software provider</a>
+					The software is voted as the winners for Multiple Categories in the{' '}
+					<Link href="https://hoteltechreport.com/news/best-hotel-software">
+						<a className="link link-secondary">Top Hotel Management Software in 2021 and 2022</a>
 					</Link>{' '}
-					in the 2021 HotelTechAwards. Many Hoteliers has reviewed this software as easy-to-use, appealing,
-					and providing good user experiences.
+					Many hoteliers has reviewed this software as easy-to-use, appealing, and providing good user
+					experiences.
 				</p>
 			</>
 		),
@@ -113,8 +113,8 @@ const projects = [
 			},
 			{
 				name: 'HotelTechReport on product',
-				url: 'https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels',
-				urlText: 'https://hoteltechreport.com/meetings-and-events/group-sales/meetingpackagecom-hotels'
+				url: 'https://hoteltechreport.com/news/best-hotel-software',
+				urlText: 'https://hoteltechreport.com/news/best-hotel-software'
 			},
 			{
 				name: 'Product/Feature updates',
@@ -175,7 +175,7 @@ const projects = [
 			'/images/data-4-health-2.png',
 			'/images/data-4-health-3.png'
 		],
-		title: 'Data 4 Healthy Recovery',
+		title: 'Cell-Culture Simulator',
 		description:
 			'In this hackathon, I am in Cell-Culture Simulator team and my responsibility is to create an interactive dashboard that enable scientist to perform cell-culture simulations.',
 		extendedDescription: (
@@ -186,7 +186,7 @@ const projects = [
 				</p>
 				<p className="mb-2">
 					In this hackathon, I am in Cell-Culture Simulator team and my responsibility is to create an
-					interactive dashboard that enable scientist to perform cell-culture simulations in a computer or
+					interactive dashboard that enables scientists to perform cell-culture simulations on a computer or
 					mobile devices.
 				</p>
 				<p>
@@ -228,13 +228,13 @@ const projects = [
 		],
 		title: 'This Portfolio :)',
 		description:
-			'This is the project of the Portfolio you are seeing. It is built from scratch using NextJs and Tailwind CSS with a focus on use experience, web performance, and best practices. Some highlights of the websites include',
+			'This is the project of the Portfolio you are seeing. It is built from scratch using NextJs and Tailwind CSS with a focus on user experience, web performance, and best practices. Some highlights of the websites include',
 		extendedDescription: (
 			<>
 				<p className="mb-2">
 					This is the project of the Portfolio you are seeing. It is built from scratch using NextJs and
-					Tailwind CSS with a focus on use experience, web performance, and best practices. Some highlights of
-					the websites include:
+					Tailwind CSS with a focus on user experience, web performance, and best practices. Some highlights
+					of the websites include:
 				</p>
 				<ul className="list-disc ml-10 mb-2">
 					<li>

@@ -7,9 +7,13 @@ const Contact = () => {
 				<h1 className="font-bold text-4xl mb-6">Get In Touch</h1>
 				<p className="mb-2 text-xl">
 					Want to know more about me? Download my résumé{' '}
-					<Link href={'#'}>
-						<a className="link link-secondary decoration-double decoration-2">here</a>
-					</Link>
+					<a
+						href="/resume.pdf"
+						className="link link-secondary decoration-double decoration-2"
+						download="Trung Ung Portfolio"
+					>
+						here
+					</a>
 					.
 				</p>
 				<p className="mb-6 text-xl">
