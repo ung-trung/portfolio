@@ -49,7 +49,7 @@ const Header = () => {
 		>
 			<div className="mx-auto space-x-1 navbar max-w-none">
 				<div className="flex-1"></div>
-				<a href="/resume.pdf" download="Trung Ung Portfolio" className="btn btn-ghost rounded-btn normal-case">
+				<a href="/Trung-Ung-Resume.pdf" download="Trung-Ung-Resume" className="btn btn-ghost rounded-btn normal-case">
 					<DownloadIcon className="w-6 h-6 mr-2" /> My Résumé
 				</a>
 				<div title="Change Theme" className="dropdown dropdown-end">

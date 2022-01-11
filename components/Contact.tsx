@@ -6,13 +6,14 @@ const Contact = () => {
 			<div className="w-full md:w-6/12">
 				<h1 className="font-bold text-4xl mb-6">Get In Touch</h1>
 				<p className="mb-2 text-xl">
-					Want to know more about me? Download my résumé{' '}
+					Want to know more about me? Download{' '}
 					<a
-						href="/resume.pdf"
-						className="link link-secondary decoration-double decoration-2"
-						download="Trung Ung Portfolio"
+						aria-label="download resume"
+						href="/Trung-Ung-Resume.pdf"
+						className="link link-secondary decoration-2"
+						download="Trung-Ung-Resume"
 					>
-						here
+						my résumé
 					</a>
 					.
 				</p>

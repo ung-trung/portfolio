@@ -20,8 +20,8 @@ const Hero = () => {
 					</p>
 
 					<a
-						href="/resume.pdf"
-						download="Trung Ung Portfolio"
+						href="/Trung-Ung-Resume.pdf"
+						download="Trung-Ung-Resume"
 						className="mb-6 text-xl sm:text-2xl btn btn-secondary animate-wiggle"
 					>
 						Download Résumé
