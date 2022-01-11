@@ -242,7 +242,7 @@ const projects = [
 					</li>
 					<li>
 						Project is themable. Theme value is stored on <b>cookie</b>, thus making theme applied on the
-						server. Prevent flickering issues that happen to client-side theme-detecting method.
+						server. Prevent flickering issues that happen to client-side theme-detecting methods.
 					</li>
 				</ul>
 			</>
